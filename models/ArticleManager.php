@@ -103,6 +103,6 @@ class ArticleManager extends AbstractEntityManager
     private function incrementViews(int $id): void
     {
         $sql = "UPDATE article SET views_count = views_count + 1 WHERE id = :id";
-        $statement = $this->db->query($sql, ['id' => $id]);
-    }    
+        $result = $this->db->query($sql, ['id' => $id]);
+    }
 }
