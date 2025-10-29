@@ -32,6 +32,8 @@ class ArticleManager extends AbstractEntityManager
         $result = $this->db->query($sql, ['id' => $id]);
         $article = $result->fetch();
         if ($article) {
+            // Incrémenter le compteur de vues
+            $this->incrementViews($id);
             return new Article($article);
         }
         return null;
@@ -92,4 +94,15 @@ class ArticleManager extends AbstractEntityManager
         $sql = "DELETE FROM article WHERE id = :id";
         $this->db->query($sql, ['id' => $id]);
     }
+
+    /**
+     * Incrémente le compteur de vues pour un article
+     * @param int $id
+     * @return void
+     */
+    private function incrementViews(int $id): void
+    {
+        $sql = "UPDATE article SET views_count = views_count + 1 WHERE id = :id";
+        $statement = $this->db->query($sql, ['id' => $id]);
+    }    
 }
