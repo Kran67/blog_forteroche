@@ -27,7 +27,12 @@
             echo '<ul>';
             foreach ($comments as $comment) {
                 echo '<li>';
-                echo '  <div class="smiley">☻</div>';
+                echo '  <div class="commentsAction">';
+                echo '    <span class="smiley">☻</span>';
+                if (isset($_SESSION) && isset($_SESSION['idUser'])) {
+                    echo '<a href="?action=deleteComment&idArticle=' . $article->getId() . '&id=' . $comment->getId() . '" class="delete" title="Supprimer ce commentaire">&#x274C;</a>';
+                }
+                echo '  </div>';
                 echo '  <div class="detailComment">';
                 echo '      <h3 class="info">Le ' . Utils::convertDateToFrenchFormat($comment->getDateCreation()) . ", " . Utils::format($comment->getPseudo()) . ' a écrit :</h3>';
                 echo '      <p class="content">' . Utils::format($comment->getContent()) . '</p>';

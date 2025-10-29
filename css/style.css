@@ -270,12 +270,21 @@ a.info {
     margin-bottom: 20px;
 }
 
-.comments .smiley {
+.commentsAction {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.comments .smiley {
     line-height: 0.7;
     font-size: 60px;
     color: var(--quoteColor);
+}
+
+.commentsAction a {
+    margin-top: 10px;
+    font-size: 20px;
 }
 
 /* On redéfinit certaines parties du "info" pour l'affichage dans les commentaires */
