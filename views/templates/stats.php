@@ -11,21 +11,24 @@
         <table class="table table-stats" id="statsTable">
             <thead>
                 <tr>
-                    <th class="sortable" data-column="title" data-order="asc">
-                        Titre
-                        <span class="sort-indicator"></span>
+                    <th class="sortable">
+                        <a href="<?= ArticleStatManager::getSortUrl('title', $sortBy, $order) ?>" class="sort-link <?= $sortBy === 'title' ? 'active' : '' ?>">
+                            Titre<?= ArticleStatManager::getSortIndicator('title', $sortBy, $order) ?>
+                        </a>
                     </th>
-                    <th class="sortable" data-column="views" data-order="desc">
-                        Nombre de vues
-                        <span class="sort-indicator"></span>
+                    <th class="sortable">
+                        <a href="<?= ArticleStatManager::getSortUrl('views_count', $sortBy, $order) ?>" class="sort-link <?= $sortBy === 'views_count' ? 'active' : '' ?>">
+                            Nombre de vues<?= ArticleStatManager::getSortIndicator('views_count', $sortBy, $order) ?>
+                        </a>                    </th>
+                    <th class="sortable">
+                        <a href="<?= ArticleStatManager::getSortUrl('comments_count', $sortBy, $order) ?>" class="sort-link <?= $sortBy === 'comments_count' ? 'active' : '' ?>">
+                            Nombre de commentaires<?= ArticleStatManager::getSortIndicator('comments_count', $sortBy, $order) ?>
+                        </a>
                     </th>
-                    <th class="sortable" data-column="comments" data-order="desc">
-                        Nombre de commentaires
-                        <span class="sort-indicator"></span>
-                    </th>
-                    <th class="sortable" data-column="date" data-order="desc">
-                        Date de publication
-                        <span class="sort-indicator"></span>
+                    <th class="sortable">
+                        <a href="<?= ArticleStatManager::getSortUrl('date_creation', $sortBy, $order) ?>" class="sort-link <?= $sortBy === 'date_creation' ? 'active' : '' ?>">
+                            Date de publication<?= ArticleStatManager::getSortIndicator('date_creation', $sortBy, $order) ?>
+                        </a>
                     </th>
                 </tr>
             </thead>
@@ -35,10 +38,10 @@
                         <td>
                          <?= htmlspecialchars($stat->getTitle()) ?>
                         </td>
-                        <td class="center">
+                        <td>
                             <?= number_format($stat->getViewsCount(), 0, ',', ' ') ?>
                         </td>
-                        <td class="center">
+                        <td>
                             <?= number_format($stat->getCommentsCount(), 0, ',', ' ') ?>
                         </td>
                         <td>

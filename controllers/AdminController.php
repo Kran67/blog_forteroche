@@ -185,14 +185,32 @@ class AdminController {
     {
         $this->checkIfUserIsConnected();
 
+        // Récupérer les paramètres de tri depuis l'URL
+        $sortBy = Utils::request('sortBy', 'date_creation');
+        $order = Utils::request('order', 'desc');
+
+        // Valider les paramètres
+        $allowedSort = ['title', 'views_count', 'comments_count', 'date_creation'];
+        $allowedOrder = ['asc', 'desc'];
+        
+        if (!in_array($sortBy, $allowedSort)) {
+            $sortBy = 'date_creation';
+        }
+        
+        if (!in_array($order, $allowedOrder)) {
+            $order = 'desc';
+        }
+
         // On récupère l'article associé.
         $articleStatManager = new ArticleStatManager();
-        $articleStat = $articleStatManager->getAllArticleStats();
+        $articleStat = $articleStatManager->getAllArticleStats($sortBy, $order);
 
         // On affiche la page des statistiques.
         $view = new View("Statistiques");
         $view->render("stats", [
-            'articleStat' => $articleStat
+            'articleStat' => $articleStat,
+            'sortBy' => $sortBy,
+            'order' => $order
         ]);
    }
 

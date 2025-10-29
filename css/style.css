@@ -384,28 +384,6 @@ footer {
     background-color: var(--commentPaleColor);
 }
 
-.table-stats th .sort-indicator {
-    display: inline-block;
-    margin-left: 8px;
-    opacity: 0.3;
-}
-
-.table-stats th .sort-indicator::before {
-    content: '↕';
-}
-
-.table-stats th.active .sort-indicator {
-    opacity: 1;
-}
-
-.table-stats th.active[data-order="asc"] .sort-indicator::before {
-    content: '↑';
-}
-
-.table-stats th.active[data-order="desc"] .sort-indicator::before {
-    content: '↓';
-}
-
 .table-stats td {
     padding: 12px 15px;
     border-bottom: 1px solid #ddd;
@@ -425,9 +403,4 @@ footer {
 
 .table-stats tbody tr:hover {
     background-color: #e9ecef;
-}
-
-.container {
-    margin: 0 auto;
-    padding: 0 15px;
 }
