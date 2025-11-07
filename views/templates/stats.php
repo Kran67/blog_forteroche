@@ -36,7 +36,7 @@
                 <?php foreach ($articleStat as $stat) { ?>
                     <tr>
                         <td>
-                         <?= htmlspecialchars($stat->getTitle()) ?>
+                         <?= Utils::format($stat->getTitle()) ?>
                         </td>
                         <td>
                             <?= number_format($stat->getViewsCount(), 0, ',', ' ') ?>
