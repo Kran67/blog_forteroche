@@ -18,6 +18,7 @@ class ArticleController
     /**
      * Affiche le détail d'un article.
      * @return void
+     * @throws Exception
      */
     public function showArticle() : void
     {
@@ -52,7 +53,8 @@ class ArticleController
      * Affiche la page "à propos".
      * @return void
      */
-    public function showApropos() {
+    public function showApropos(): void
+    {
         $view = new View("A propos");
         $view->render("apropos");
     }

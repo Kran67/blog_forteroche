@@ -1,6 +1,6 @@
 <?php
     /**
-     * Ce template affiche la page "à propos".
+     * Ce modèle affiche la page "à propos".
      */
 ?>
 
@@ -13,7 +13,7 @@
     inspiration inestimable.</p>
 
     <p>Depuis aussi loin que je me souvienne, les mots ont été une part essentielle de ma vie. J'ai grandi en observant mon 
-    père, Jean Forteroche, plonger dans les méandres de l'écriture. Son bureau était un sanctuaire de créativité, et ses 
+    père, Jean Forteroche, plonger dans les méandres de l'écriture. Son bureau était un sanctuaire de créativité et ses
     manuscrits étaient des trésors que je parcourais avec émerveillement. Il m'a enseigné que les mots avaient le pouvoir
     de créer des mondes, d'explorer l'âme humaine, et de capturer l'infini dans une simple phrase.</p>
 

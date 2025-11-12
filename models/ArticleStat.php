@@ -29,10 +29,11 @@
         return $this->title;
     }
 
-    /**
-     * Setter pour le nombre de vues.
-     * @return int
-     */
+     /**
+      * Setter pour le nombre de vues.
+      * @param int $viewsCount
+      * @return void
+      */
     public function setViewsCount(int $viewsCount) : void
     {
         $this->viewsCount = $viewsCount;
@@ -48,9 +49,9 @@
     }
 
     /**
-     * Setter pour la date de création. Si la date est une string, on la convertit en DateTime.
+     * Setter pour la date de création. Si la date est une chaine, on la convertit en DateTime.
      * @param string|DateTime $dateCreation
-     * @param string $format : le format pour la convertion de la date si elle est une string.
+     * @param string $format : le format pour la conversion de la date si elle est une chaine.
      * Par défaut, c'est le format de date mysql qui est utilisé. 
      */
     public function setDateCreation(string|DateTime $dateCreation, string $format = 'Y-m-d H:i:s') : void 
@@ -71,10 +72,11 @@
         return $this->dateCreation;
     }
 
-    /**
-     * Setter pour le nombre de vues.
-     * @return int
-     */
+     /**
+      * Setter pour le nombre de vues.
+      * @param int $commentsCount
+      * @return void
+      */
     public function setCommentsCount(int $commentsCount) : void
     {
         $this->commentsCount = $commentsCount;

@@ -1,5 +1,7 @@
 <?php
 
+use JetBrains\PhpStorm\NoReturn;
+
 /**
  * Classe utilitaire : cette classe ne contient que des méthodes statiques qui peuvent être appelées
  * directement sans avoir besoin d'instancier un objet Utils.
@@ -7,14 +9,14 @@
  */
 class Utils {
     /**
-     * Convertit une date vers le format de type "Samedi 15 juillet 2023" en francais.
+     * Convertit une date vers le format de type "samedi 15 juillet 2023" en francais.
      * @param DateTime $date : la date à convertir.
      * @return string : la date convertie.
      */
     public static function convertDateToFrenchFormat(DateTime $date) : string
     {
-        // Attention, s'il y a un soucis lié à IntlDateFormatter c'est qu'il faut
-        // activer l'extention intl_date_formater (ou intl) au niveau du serveur apache. 
+        // Attention, s'il y a un souci lié à IntlDateFormatter c'est qu'il faut
+        // activer l'extension intl_date_formater (ou intl) au niveau du serveur apache.
         // Ca peut se faire depuis php.ini ou parfois directement depuis votre utilitaire (wamp/mamp/xamp)
         $dateFormatter = new IntlDateFormatter('fr_FR', IntlDateFormatter::FULL, IntlDateFormatter::FULL);
         $dateFormatter->setPattern('EEEE d MMMM Y');
@@ -27,7 +29,7 @@ class Utils {
      * @param array $params : Facultatif, les paramètres de l'action sous la forme ['param1' => 'valeur1', 'param2' => 'valeur2']
      * @return void
      */
-    public static function redirect(string $action, array $params = []) : void
+    #[NoReturn] public static function redirect(string $action, array $params = []) : void
     {
         $url = "index.php?action=$action";
         foreach ($params as $paramName => $paramValue) {
@@ -38,8 +40,8 @@ class Utils {
     }
 
     /**
-     * Cette méthode retourne le code js a insérer en attribut d'un bouton.
-     * pour ouvrir une popup "confirm", et n'effectuer l'action que si l'utilisateur
+     * Cette méthode retourne le code js à insérer en attribut d'un bouton.
+     * Pour ouvrir une popup "confirm", et n'effectuer l'action que si l'utilisateur
      * a bien cliqué sur "ok".
      * @param string $message : le message à afficher dans la popup.
      * @return string : le code js à insérer dans le bouton.
@@ -57,10 +59,10 @@ class Utils {
      */
     public static function format(string $string) : string
     {
-        // Etape 1, on protège le texte avec htmlspecialchars.
+        // Étape 1, on protège le texte avec htmlspecialchars.
         $finalString = htmlspecialchars($string, ENT_QUOTES);
 
-        // Etape 2, le texte va être découpé par rapport aux retours à la ligne, 
+        // Étape 2, le texte va être découpé par rapport aux retours à la ligne,
         $lines = explode("\n", $finalString);
 
         // On reconstruit en mettant chaque ligne dans un paragraphe (et en sautant les lignes vides).

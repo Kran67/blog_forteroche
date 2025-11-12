@@ -1,12 +1,13 @@
 <?php
     /**
-     * Ce template affiche un article et ses commentaires.
+     * Ce modèle affiche un article et ses commentaires.
      * Il affiche également un formulaire pour ajouter un commentaire.
      */
 ?>
 
 <article class="mainArticle">
-    <h2> <?= Utils::format($article->getTitle()) ?> </h2>
+    <h2> <?= /** @var Article $article */
+        Utils::format($article->getTitle()) ?> </h2>
     <span class="quotation">«</span>
     <p><?= Utils::format($article->getContent()) ?></p>
 

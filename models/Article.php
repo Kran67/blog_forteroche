@@ -80,9 +80,9 @@
     }
 
     /**
-     * Setter pour la date de création. Si la date est une string, on la convertit en DateTime.
+     * Setter pour la date de création. Si la date est une chaine, on la convertit en DateTime.
      * @param string|DateTime $dateCreation
-     * @param string $format : le format pour la convertion de la date si elle est une string.
+     * @param string $format : le format pour la conversion de la date si elle est une chaine.
      * Par défaut, c'est le format de date mysql qui est utilisé. 
      */
     public function setDateCreation(string|DateTime $dateCreation, string $format = 'Y-m-d H:i:s') : void 
@@ -104,12 +104,12 @@
     }
 
     /**
-     * Setter pour la date de mise à jour. Si la date est une string, on la convertit en DateTime.
+     * Setter pour la date de mise à jour. Si la date est une chaine, on la convertit en DateTime.
      * @param string|DateTime $dateUpdate
-     * @param string $format : le format pour la convertion de la date si elle est une string.
+     * @param string $format : le format pour la conversion de la date si elle est une chaine.
      * Par défaut, c'est le format de date mysql qui est utilisé.
      */
-    public function setDateUpdate(string|DateTime $dateUpdate, string $format = 'Y-m-d H:i:s') : void 
+    public function setDateUpdate(string|DateTime|null $dateUpdate, string $format = 'Y-m-d H:i:s') : void 
     {
         if (is_string($dateUpdate)) {
             $dateUpdate = DateTime::createFromFormat($format, $dateUpdate);

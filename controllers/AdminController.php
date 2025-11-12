@@ -50,6 +50,7 @@ class AdminController {
     /**
      * Connexion de l'utilisateur.
      * @return void
+     * @throws Exception
      */
     public function connectUser() : void 
     {
@@ -125,9 +126,10 @@ class AdminController {
     }
 
     /**
-     * Ajout et modification d'un article. 
-     * On sait si un article est ajouté car l'id vaut -1.
+     * Ajout et modification d'un article.
+     * On sait si un article est ajouté, car l'id vaut -1.
      * @return void
+     * @throws Exception
      */
     public function updateArticle() : void 
     {

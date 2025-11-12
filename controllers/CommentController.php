@@ -5,6 +5,7 @@ class CommentController
     /**
      * Ajoute un commentaire.
      * @return void
+     * @throws Exception
      */
     public function addComment() : void
     {

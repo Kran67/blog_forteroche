@@ -12,7 +12,9 @@
             <thead>
                 <tr>
                     <th class="sortable">
-                        <a href="<?= ArticleStatManager::getSortUrl('title', $sortBy, $order) ?>" class="sort-link <?= $sortBy === 'title' ? 'active' : '' ?>">
+                        <a href="<?= /** @var string $sortBy */
+                        /** @var string $order */
+                        ArticleStatManager::getSortUrl('title', $sortBy, $order) ?>" class="sort-link <?= $sortBy === 'title' ? 'active' : '' ?>">
                             Titre<?= ArticleStatManager::getSortIndicator('title', $sortBy, $order) ?>
                         </a>
                     </th>
@@ -33,7 +35,9 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($articleStat as $stat) { ?>
+                <?php
+                /** @var array $articleStat */
+                foreach ($articleStat as $stat) { ?>
                     <tr>
                         <td>
                          <?= Utils::format($stat->getTitle()) ?>

@@ -6,7 +6,7 @@
 class ArticleStatManager extends AbstractEntityManager 
 {
     /**
-     * Récupère toutes les statistique des articles.
+     * Récupère toutes les statistiques des articles.
      * @return array : un tableau d'objets ArticleStat.
      */
     public function getAllArticleStats(string $sortBy, string $order) : array
@@ -20,7 +20,7 @@ class ArticleStatManager extends AbstractEntityManager
                 FROM article a
                 LEFT JOIN comment c ON a.id = c.id_article
                 GROUP BY a.id, a.title, a.views_count, a.date_creation
-                ORDER BY {$sortBy} {$order}";
+                ORDER BY ".$sortBy." ".$order;
         
         $result = $this->db->query($sql);
         $articleStats = [];
@@ -32,11 +32,11 @@ class ArticleStatManager extends AbstractEntityManager
 
     /**
      * Fonction pour générer les URLs de tri
-     * @param 
-     * @param 
-     * @param 
+     * @param string $column
+     * @param string $currentSort
+     * @param string $currentOrder
      * @return string
-    */
+     */
     public static function getSortUrl(string $column, string $currentSort, string $currentOrder): string
     {
         if ($column === $currentSort) {
@@ -51,11 +51,11 @@ class ArticleStatManager extends AbstractEntityManager
 
     /**
      * Fonction pour afficher l'indicateur de tri
-     * @param 
-     * @param 
-     * @param 
+     * @param string $column
+     * @param string $currentSort
+     * @param string $currentOrder
      * @return string
-    */ 
+     */
     public static function getSortIndicator(string $column, string $currentSort, string $currentOrder): string
     {
         if ($column === $currentSort) {

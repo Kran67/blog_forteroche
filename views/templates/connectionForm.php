@@ -1,6 +1,6 @@
 <?php
     /**
-     * Template pour afficher le formulaire de connexion.
+     * Modèle pour afficher le formulaire de connexion.
      */
 ?>
 
