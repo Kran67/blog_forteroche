@@ -1,4 +1,7 @@
 <?php
+namespace App\src\models;
+
+use App\src\models\User;
 
 /** 
  * Classe UserManager pour gérer les requêtes liées aux users et à l'authentification.

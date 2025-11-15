@@ -1,4 +1,7 @@
 <?php
+namespace App\src\models;
+
+use DateTime;
 
 /**
  * Entité représentant un commentaire.

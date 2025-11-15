@@ -1,4 +1,7 @@
 <?php
+namespace App\src\models;
+
+use DateTime;
 
 /**
  * Entité Article, un article est défini par les champs

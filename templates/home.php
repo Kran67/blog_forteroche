@@ -2,6 +2,7 @@
     /**
      * Affichage de Liste des articles. 
      */
+    use App\src\services\Utils;
 ?>
 
 <div class="articleList">

@@ -1,4 +1,12 @@
 <?php
+namespace App\src\controllers;
+
+use App\src\models\ArticleManager;
+use App\src\models\Comment;
+use App\src\models\CommentManager;
+use App\src\models\View;
+use App\src\services\Utils;
+use Exception;
 
 class CommentController 
 {

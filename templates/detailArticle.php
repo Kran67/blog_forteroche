@@ -3,6 +3,7 @@
      * Ce modèle affiche un article et ses commentaires.
      * Il affiche également un formulaire pour ajouter un commentaire.
      */
+    use App\src\services\Utils;
 ?>
 
 <article class="mainArticle">

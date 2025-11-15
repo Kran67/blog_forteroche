@@ -1,4 +1,8 @@
 <?php
+namespace App\src\models;
+
+use App\src\models\AbstractEntityManager;
+use App\src\models\Article;
 
 /**
  * Classe qui gère les articles.
@@ -64,8 +68,8 @@ class ArticleManager extends AbstractEntityManager
         $sql = "INSERT INTO article (id_user, title, content, date_creation) VALUES (:id_user, :title, :content, NOW())";
         $this->db->query($sql, [
             'id_user' => $article->getIdUser(),
-            'title' => $article->getTitle(),
-            'content' => $article->getContent()
+            'title' => htmlspecialchars($article->getTitle()),
+            'content' => htmlspecialchars($article->getContent())
         ]);
     }
 
@@ -78,8 +82,8 @@ class ArticleManager extends AbstractEntityManager
     {
         $sql = "UPDATE article SET title = :title, content = :content, date_update = NOW() WHERE id = :id";
         $this->db->query($sql, [
-            'title' => $article->getTitle(),
-            'content' => $article->getContent(),
+            'title' => htmlspecialchars($article->getTitle()),
+            'content' => htmlspecialchars($article->getContent()),
             'id' => $article->getId()
         ]);
     }

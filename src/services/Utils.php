@@ -1,4 +1,8 @@
 <?php
+namespace App\src\services;
+
+use DateTime;
+use IntlDateFormatter;
 
 use JetBrains\PhpStorm\NoReturn;
 
@@ -31,7 +35,7 @@ class Utils {
      */
     #[NoReturn] public static function redirect(string $action, array $params = []) : void
     {
-        $url = "index.php?action=$action";
+        $url = "../public/index.php?action=$action";
         foreach ($params as $paramName => $paramValue) {
             $url .= "&$paramName=$paramValue";
         }

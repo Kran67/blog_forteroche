@@ -1,4 +1,7 @@
 <?php
+namespace App\src\models;
+
+use App\src\models\ArticleStat;
 
 /**
  * Classe qui gère les statistiques des articles.

@@ -2,6 +2,8 @@
     /** 
      * Affichage de la partie admin : statistiques des articles. 
      */
+    use App\src\models\ArticleStatManager;
+    use App\src\services\Utils;
 ?>
 
 <h2>Statistiques des articles</h2>
